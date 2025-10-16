@@ -464,6 +464,13 @@ h1, h2, h3, h4, h5, h6, p {
         width: 80px;
         margin-bottom: 32px;
     }
+    .about-decoration {
+        position: absolute;
+        top: -30px;
+        left: 70%;
+        z-index: 0;
+        opacity: 0.1;
+    }
     
     .deco-circle-1 {
         width: 80px;
