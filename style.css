@@ -889,6 +889,7 @@ h1, h2, h3, h4, h5, h6, p {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
+  list-style-image: url('./img/study.png');
 }
 .timeline::after {
   content: '';
@@ -909,16 +910,17 @@ h1, h2, h3, h4, h5, h6, p {
   left: 12px;
   top: 18px;
   width: 16px;
-  height: 16px;
-  border-radius: 50%;
+  height: 10px;
+  /*border-radius: 50%;
   background-color: var(--primary-color);
-  border: 2px solid var(--background-light);
+  border: 2px solid var(--background-light);*/
   z-index: 1;
+  background-image: url('./img/study.png');
 }
 .timeline-year {
   font-family: 'Figtree', sans-serif;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 24px;
   color: var(--primary-color);
   margin-bottom: 16px;
 }
@@ -931,92 +933,45 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (max-width: 768px) {
-    .cta-container {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 40px;
+    .timeline::after {
+        left: 15px;
     }
-
-    .cta-image {
-        width: 220px;
-        height: 220px;
+    .timeline-item {
+        padding: 10px 20px 25px 50px;
     }
-
-    .cta-content {
-        max-width: 100%;
-        order: -1;
+    .timeline-item::before {
+        left: 7px;
+        width: 14px;
+        height: 10px;
     }
-
-    .cta-title {
-        font-size: 28px;
-        margin-bottom: 24px;
-    }
-
-    .cta-subtitle {
-        font-size: 16px;
+    .timeline-year {
+        font-size: 18px;
         margin-bottom: 12px;
     }
-
-    .cta-quote {
-        font-size: 16px;
-        line-height: 1.4;
-        margin-bottom: 40px;
-    }
-
-    .cta-links {
-        justify-content: center;
-        gap: 32px;
-    }
-
-    .cta-links a {
-        font-size: 20px;
-    }
-
-    .deco-circle-4 {
-        width: 150px;
-        height: 150px;
-        top: 50px;
-        right: 10%;
+    .timeline-description {
+        font-size: 18px;
+        line-height: 1.5;
     }
 }
 
 @media (max-width: 480px) {
-    .cta-container {
-        gap: 32px;
+    .timeline::after {
+        left: 10px;
     }
-
-    .cta-image {
-        width: 180px;
-        height: 180px;
+    .timeline-item {
+        padding: 8px 15px 20px 40px;
     }
-
-    .cta-title {
-        font-size: 24px;
-        margin-bottom: 20px;
+    .timeline-item::before {
+        left: 2px;
     }
-
-    .cta-subtitle {
-        font-size: 14px;
+    .timeline-year {
+        font-size: 20px;
     }
-
-    .cta-quote {
-        font-size: 14px;
-        margin-bottom: 32px;
-    }
-
-    .cta-links {
-        gap: 24px;
-    }
-
-    .cta-links a {
-        font-size: 18px;
-    }
-
-    .deco-circle-4 {
-        width: 120px;
-        height: 120px;
+    .timeline-description {
+        font-size: 16px;
     }
 }
+
 
 
 /* CTA SECTION */
