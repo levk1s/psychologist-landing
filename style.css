@@ -941,7 +941,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
     .timeline-item::before {
         left: 7px;
-        width: 14px;
+        width: 16px;
         height: 10px;
     }
     .timeline-year {
