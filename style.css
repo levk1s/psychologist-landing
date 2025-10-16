@@ -1040,43 +1040,42 @@ h1, h2, h3, h4, h5, h6, p {
 
 @media (max-width: 768px) {
     .cta-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
+        gap: 32px;
     }
-    
+
     .cta-image {
         width: 220px;
         height: 220px;
     }
-    
+
     .cta-title {
         font-size: 32px;
         margin-bottom: 32px;
     }
-    
+
     .cta-subtitle {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 12px;
     }
-    
+
     .cta-quote {
         font-size: 16px;
-        margin-bottom: 60px;
+        margin-bottom: 48px;
     }
-    
+
     .cta-links {
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 24px;
     }
-    
+
     .cta-links a {
         font-size: 20px;
     }
-    
+
     .deco-circle-4 {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
+        top: 50px;
     }
 }
 
@@ -1085,13 +1084,22 @@ h1, h2, h3, h4, h5, h6, p {
         width: 180px;
         height: 180px;
     }
-    
+
     .cta-title {
         font-size: 28px;
     }
-    
+
     .cta-quote {
         margin-bottom: 40px;
+    }
+
+    .cta-links a {
+        font-size: 18px;
+    }
+
+    .deco-circle-4 {
+        width: 120px;
+        height: 120px;
     }
 }
 
