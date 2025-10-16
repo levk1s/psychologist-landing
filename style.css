@@ -270,7 +270,7 @@ h1, h2, h3, h4, h5, h6, p {
   font-weight: 400;
   font-size: 48px;
   color: var(--primary-color);
-  margin-bottom: 32px;
+  margin-bottom: 15px;
 }
 .hero-subtitle {
   font-family: 'Figtree', sans-serif;
