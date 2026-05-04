@@ -25,4 +25,26 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.remove('active');
         }
     });
+
+    // Accordion timeline
+    const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+    accordionTriggers.forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+            const body = trigger.nextElementSibling;
+
+            // Close all others
+            accordionTriggers.forEach(function(t) {
+                t.setAttribute('aria-expanded', 'false');
+                const b = t.nextElementSibling;
+                if (b) b.classList.remove('open');
+            });
+
+            // Toggle current
+            if (!isExpanded) {
+                trigger.setAttribute('aria-expanded', 'true');
+                body.classList.add('open');
+            }
+        });
+    });
 });
