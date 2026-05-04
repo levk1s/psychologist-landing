@@ -272,26 +272,56 @@
         <div class="certificates-section">
             <h3 class="certificates-title">Сертифікати</h3>
             <div class="certificates-grid">
-                <a href="./img/certificate/Андріанна Шимко.pdf" class="certificate-card" target="_blank" rel="noopener">
-                    <div class="certificate-icon">📄</div>
-                    <span>Андріанна Шимко</span>
-                </a>
-                <a href="./img/certificate/Сертифікат Тренерство.pdf" class="certificate-card" target="_blank" rel="noopener">
-                    <div class="certificate-icon">📄</div>
-                    <span>Сертифікат Тренерство</span>
-                </a>
-                <a href="./img/certificate/Шимко А.А диплом.pdf" class="certificate-card" target="_blank" rel="noopener">
-                    <div class="certificate-icon">📄</div>
-                    <span>Диплом</span>
-                </a>
-                <a href="./img/certificate/Шимко Андріанна (1) (1).pdf" class="certificate-card" target="_blank" rel="noopener">
-                    <div class="certificate-icon">📄</div>
-                    <span>Сертифікат (1)</span>
-                </a>
-                <a href="./img/certificate/Шимко Андріанна (1).pdf" class="certificate-card" target="_blank" rel="noopener">
-                    <div class="certificate-icon">📄</div>
-                    <span>Сертифікат (2)</span>
-                </a>
+                <div class="certificate-card" data-pdf="./img/certificate/Андріанна Шимко.pdf" data-title="Андріанна Шимко">
+                    <div class="cert-preview-wrap">
+                        <iframe class="cert-preview-frame" src="./img/certificate/Андріанна Шимко.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" tabindex="-1" aria-hidden="true"></iframe>
+                        <div class="cert-preview-overlay"></div>
+                    </div>
+                    <span class="cert-label">Андріанна Шимко</span>
+                </div>
+                <div class="certificate-card" data-pdf="./img/certificate/Сертифікат Тренерство.pdf" data-title="Сертифікат Тренерство">
+                    <div class="cert-preview-wrap">
+                        <iframe class="cert-preview-frame" src="./img/certificate/Сертифікат Тренерство.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" tabindex="-1" aria-hidden="true"></iframe>
+                        <div class="cert-preview-overlay"></div>
+                    </div>
+                    <span class="cert-label">Сертифікат Тренерство</span>
+                </div>
+                <div class="certificate-card" data-pdf="./img/certificate/Шимко А.А диплом.pdf" data-title="Диплом">
+                    <div class="cert-preview-wrap">
+                        <iframe class="cert-preview-frame" src="./img/certificate/Шимко А.А диплом.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" tabindex="-1" aria-hidden="true"></iframe>
+                        <div class="cert-preview-overlay"></div>
+                    </div>
+                    <span class="cert-label">Диплом</span>
+                </div>
+                <div class="certificate-card" data-pdf="./img/certificate/Шимко Андріанна (1) (1).pdf" data-title="Сертифікат (1)">
+                    <div class="cert-preview-wrap">
+                        <iframe class="cert-preview-frame" src="./img/certificate/Шимко Андріанна (1) (1).pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" tabindex="-1" aria-hidden="true"></iframe>
+                        <div class="cert-preview-overlay"></div>
+                    </div>
+                    <span class="cert-label">Сертифікат (1)</span>
+                </div>
+                <div class="certificate-card" data-pdf="./img/certificate/Шимко Андріанна (1).pdf" data-title="Сертифікат (2)">
+                    <div class="cert-preview-wrap">
+                        <iframe class="cert-preview-frame" src="./img/certificate/Шимко Андріанна (1).pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" tabindex="-1" aria-hidden="true"></iframe>
+                        <div class="cert-preview-overlay"></div>
+                    </div>
+                    <span class="cert-label">Сертифікат (2)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certificate Modal -->
+        <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-label="Перегляд сертифікату">
+            <div class="cert-modal-backdrop" id="certModalBackdrop"></div>
+            <div class="cert-modal-content">
+                <div class="cert-modal-header">
+                    <span class="cert-modal-title" id="certModalTitle"></span>
+                    <div class="cert-modal-actions">
+                        <a class="cert-modal-download" id="certModalDownload" download>⬇ Завантажити</a>
+                        <button class="cert-modal-close" id="certModalClose" aria-label="Закрити">✕</button>
+                    </div>
+                </div>
+                <iframe class="cert-modal-frame" id="certModalFrame" src="" title="Сертифікат"></iframe>
             </div>
         </div>
 

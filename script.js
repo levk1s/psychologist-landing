@@ -47,4 +47,48 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Certificate modal
+    const modal       = document.getElementById('certModal');
+    const modalFrame  = document.getElementById('certModalFrame');
+    const modalTitle  = document.getElementById('certModalTitle');
+    const modalDl     = document.getElementById('certModalDownload');
+    const modalClose  = document.getElementById('certModalClose');
+    const modalBg     = document.getElementById('certModalBackdrop');
+
+    function openModal(pdf, title) {
+        modalTitle.textContent = title;
+        modalFrame.src = pdf;
+        modalDl.href = pdf;
+        modalDl.setAttribute('download', title + '.pdf');
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('open');
+        modalFrame.src = '';
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.certificate-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+            openModal(card.dataset.pdf, card.dataset.title);
+        });
+        // keyboard accessibility
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal(card.dataset.pdf, card.dataset.title);
+            }
+        });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modalBg.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+    });
 });
