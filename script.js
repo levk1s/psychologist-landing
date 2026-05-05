@@ -48,40 +48,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Certificate modal
-    const modal       = document.getElementById('certModal');
-    const modalFrame  = document.getElementById('certModalFrame');
-    const modalTitle  = document.getElementById('certModalTitle');
-    const modalDl     = document.getElementById('certModalDownload');
-    const modalClose  = document.getElementById('certModalClose');
-    const modalBg     = document.getElementById('certModalBackdrop');
+    // Certificate lightbox
+    const modal      = document.getElementById('certModal');
+    const modalImg   = document.getElementById('certModalImg');
+    const modalCap   = document.getElementById('certModalCaption');
+    const modalClose = document.getElementById('certModalClose');
+    const modalBg    = document.getElementById('certModalBackdrop');
 
-    function openModal(pdf, title) {
-        modalTitle.textContent = title;
-        modalFrame.src = pdf;
-        modalDl.href = pdf;
-        modalDl.setAttribute('download', title + '.pdf');
+    function openModal(img, title) {
+        modalImg.src = img;
+        modalImg.alt = title;
+        modalCap.textContent = title;
         modal.classList.add('open');
         document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
         modal.classList.remove('open');
-        modalFrame.src = '';
+        modalImg.src = '';
         document.body.style.overflow = '';
     }
 
     document.querySelectorAll('.certificate-card').forEach(function(card) {
         card.addEventListener('click', function() {
-            openModal(card.dataset.pdf, card.dataset.title);
+            openModal(card.dataset.img, card.dataset.title);
         });
-        // keyboard accessibility
-        card.setAttribute('tabindex', '0');
-        card.setAttribute('role', 'button');
         card.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                openModal(card.dataset.pdf, card.dataset.title);
+                openModal(card.dataset.img, card.dataset.title);
             }
         });
     });
