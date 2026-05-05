@@ -1336,11 +1336,17 @@ h1, h2, h3, h4, h5, h6, p {
 
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
   max-width: 1100px;
   margin: 0 auto;
 }
+
+.certificate-card:nth-child(1) { grid-column: 1 / 3; }
+.certificate-card:nth-child(2) { grid-column: 3 / 5; }
+.certificate-card:nth-child(3) { grid-column: 5 / 7; }
+.certificate-card:nth-child(4) { grid-column: 2 / 4; }
+.certificate-card:nth-child(5) { grid-column: 4 / 6; }
 
 .certificate-card {
   display: flex;
@@ -1450,8 +1456,20 @@ h1, h2, h3, h4, h5, h6, p {
 
 @media (max-width: 768px) {
   .certificates-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
+  }
+  .certificate-card:nth-child(1),
+  .certificate-card:nth-child(2),
+  .certificate-card:nth-child(3),
+  .certificate-card:nth-child(4),
+  .certificate-card:nth-child(5) {
+    grid-column: auto;
+  }
+  .certificate-card:nth-child(5) {
+    grid-column: 1 / 3;
+    max-width: 50%;
+    margin: 0 auto;
   }
   .cert-label {
     font-size: 13px;
